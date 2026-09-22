@@ -6,6 +6,10 @@ Das Projekt bildet eine Plattform für UWB-basierte Lokalisation ohne reale Hard
 
 ---
 
+https://github.com/user-attachments/assets/2b5e2dcc-e16e-43fd-a94d-3746f35f67ee
+
+---
+
 ## Inhaltsverzeichnis
 
 - [Architektur](#architektur)
