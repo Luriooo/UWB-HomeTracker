@@ -29,9 +29,9 @@ https://github.com/user-attachments/assets/2b5e2dcc-e16e-43fd-a94d-3746f35f67ee
 Das Projekt besteht aus zwei Komponenten die über eine FastAPI-Schnittstelle kommunizieren 
 
 ```
-┌─────────────────────────┐        HTTP/JSON        ┌───────────────────────────┐
-│   Python-Backend         │  ───────────────────▶   │   React-Webmap             │
-│   (Qt-UI + Simulation)   │   /signal, /misc         │   (OpenLayers, Pixel-CRS)  │
+┌─────────────────────────┐        FastAPI           ┌───────────────────────────┐
+│   Python-Backend         │  ───────────────────▶   │   React-Webmap           │
+│   (Qt-UI + Simulation)   │   /signal, /misc         │   OpenLayers             │
 └─────────────────────────┘                          └───────────────────────────┘
 ```
 
