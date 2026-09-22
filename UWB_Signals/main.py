@@ -23,10 +23,6 @@ prz = Floorplan_Processor()
 app = FastAPI()
 # CORS Settings
 origins = [
-    "http://localhost:8000/signal",
-    "http://0.0.0.0:8000/signal",
-    "http://localhost:8000",
-    "http://0.0.0.0:8000",
     "http://localhost:5173"
     ]
 
