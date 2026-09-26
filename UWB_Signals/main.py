@@ -18,8 +18,8 @@ from Anchor_Picker import AnchorPicker
 ## python main.py im Terminal ausführen                  ##
 ###########################################################
 
-uwb = UWB_Generator()
 prz = Floorplan_Processor()
+uwb = UWB_Generator()
 app = FastAPI()
 # CORS Settings
 origins = [
@@ -98,11 +98,11 @@ class Ui(QWidget):
 
         self.button3 = QPushButton("Random Position")
         self.button3.setFixedWidth(150)
-        self.button3.clicked.connect(uwb.random_signal)
+        self.button3.clicked.connect(self.random_signal)
 
         self.button4 = QPushButton("Moving Position")
         self.button4.setFixedWidth(150)
-        self.button4.clicked.connect(uwb.moving_signal)
+        self.button4.clicked.connect(self.moving_signal)
 
         self.status = QLabel("")
         self.status.setStyleSheet("color: gray;")
@@ -134,6 +134,21 @@ class Ui(QWidget):
     def set_anchors(self, coords):
         uwb.set_anchors(coords)
         self.status.setText(f"{len(coords)} Anchors gesetzt: {coords}")
+
+    def random_signal(self,):
+        if uwb.anchors.size ==0:
+            self.status.setText("Bitte zuerst 'Set Floorplan' & 'Set Anchors ausführen'")
+        else:
+            uwb.random_signal()
+            self.status.setText("Anker gesetzt!")
+    
+    def moving_signal(self,):
+        if uwb.anchors.size ==0:
+            self.status.setText("Bitte zuerst 'Set Floorplan' & 'Set Anchors ausführen'")
+        else:
+            uwb.moving_signal()
+            self.status.setText("Anker gesetzt!")
+        
 
 
 if __name__ == "__main__":
